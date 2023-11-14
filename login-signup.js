@@ -11,10 +11,11 @@ pwdShowHide.forEach(eyeIcon =>{
         pwFields.forEach(pwField =>{
             if (pwField.type === "password") {
                 pwField.type = "text";
+                
                 pwdShowHide.forEach(icon =>{
                     icon.classList.replace("fas fa-eye-slash", "fas fa-eye");
                 })
-            }else {
+            } else {
                 pwField.type = "password";
 
                 pwdShowHide.forEach(icon =>{
@@ -30,24 +31,31 @@ pwdShowHide.forEach(eyeIcon =>{
 signUp.addEventListener("click", function(){
     container.classList.add("active");
 })
+
 login.addEventListener("click", function (){
     container.classList.remove("active")
 })
 
 //form validation 
 function loginvalidation() {
-    let email = document.forms.loginForm.email.value;
-    let password = document.forms.loginForm.password.value;
-    let regEmail = /^[a-zA-Z0-9.!#$%&'"+/=?^_'{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (email == "" || !regEmail.test(email)){
-        alert("please enter your Email properly.");
+    let email = document.forms.loginForm.email;
+    let password = document.forms.loginForm.password;
+    
+    let emailRegex = /^[a-zA-Z0-9.!#$%&'"+/=?^_'{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    
+    if (email == "" || !emailRegex.test(email.value)){
+        alert("Please provide a valid Email");
         email.focus();
         return false;
-    }if (password = ""){
-        alert("please enter your password");
+    }
+    
+    if (password = "" || ! passwordRegex.test(password.value)){
+        alert("Please provide a strong Password");
         password.focus();
         return false;
-    }else {
-        alert("Login successful.")
     }
+
+    alert("Login successful.")
+    return true;
 }
