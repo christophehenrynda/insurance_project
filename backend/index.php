@@ -7,53 +7,56 @@ include 'connection.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SignUp & LogIn Page</title>
+    <link rel="shortcut icon" href="images/symbol.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/forms.css">
+
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div id="container" class="container">
-<!-- FORM SECTION -->
-		<div class="row">
-			<!-- SIGN UP -->
-            <div class="col align-items-center flex-col sign-up">
-                <div class="form-wrapper align-items-center">
-                    <div class="form sign-up">
-                        <form action="" method="post">
-                            <div class="input-group">
-                                <i class="fa-solid fa-user"></i>
-                                <input type="text" name="username" placeholder="Username" required>
-                            </div>
-                            <div class="input-group">
-                                <i class="fa-solid fa-envelope"></i>
-                                <input type="email" name="email" placeholder="Email" required>
-                            </div>
-                            <div class="input-group">
-                            <i class="fa-solid fa-lock"></i>
-                                <input type="password" name="password" placeholder="Password" required>
-                            </div>
-                            <!-- <div class="input-group">
-                                <i class="fa-solid fa-unlock"></i>
-                                <input type="password" placeholder="Confirm password" required>
-                            </div> -->
-                            <button type="submit" name="submit">Sign up</button>
-                            <p>
-                                <span>Already have an account?</span>
-                                <b onclick="toggle()" class="pointer">Sign in here</b>
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            
+<div id="home" class="crossfade">
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+        <figure></figure>
+    </div>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="index.php" class="logo">
+                <img src="images/symbol.png" alt="logo">
+                <h2>Insurance Census System</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>Welcome Back</h2>
+                <p>Please log in using your personal information to stay connected with us.</p>
             </div>
-			<!-- END SIGN UP -->
-
-
-			<!-- SIGN IN -->
-			<div class="col align-items-center flex-col sign-in">
-				<div class="form-wrapper align-items-center">
-					<div class="form sign-in">
-                        <form action="" method="post">
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form action="" method="post">
 <?php
 $sql= mysqli_query($conn, "SELECT * FROM user_account");
 if ($sql) {
@@ -64,74 +67,61 @@ if ($sql) {
     }
 }
 ?>
-                            <div class="input-group">
-                                <i class="fa-solid fa-user"></i>
-                                <input type="text" name="username" placeholder="Username" required>
-                            </div>
-                            <div class="input-group">
-                                <i class="fa-solid fa-envelope"></i>
-                                <input type="email" name="email" placeholder="Email" required>
-                            </div>
-                            <div class="input-group">
-                                <i class="fa-solid fa-lock"></i>
-                                <input type="password" name="password" placeholder="Password" required>
-                            </div>
-                            <button type="submit" name="login">Sign in</button>
-                            <!-- <p>
-                                <b>
-                                    Forgot password?
-                                </b>
-                            </p> -->
-                            <p>
-                                <span>Don't have an account?</span>
-                                <b onclick="toggle()" class="pointer">Sign up here</b>
-                            </p>
-                        </form>
-					</div>
-				</div>
-				<div class="form-wrapper">
-
-				</div>
-			</div>
-			<!-- END SIGN IN -->
-		</div>
-<!-- END FORM SECTION -->
-
-
-
-<!-- CONTENT SECTION -->
-		<div class="row content-row">
-			<!-- SIGN IN CONTENT -->
-			<div class="col align-items-center flex-col">
-				<div class="text sign-in">
-					<h2>
-						Welcome
-					</h2>
-	
-				</div>
-				<div class="img sign-in">
-		
-				</div>
-			</div>
-			<!-- END SIGN IN CONTENT -->
-
-			<!-- SIGN UP CONTENT -->
-			<div class="col align-items-center flex-col">
-				<div class="img sign-up">
-				
-				</div>
-				<div class="text sign-up">
-					<h2>
-						Create Your Account
-					</h2>
-	
-				</div>
-			</div>
-			<!-- END SIGN UP CONTENT -->
-		</div>
-<!-- END CONTENT SECTION -->
-	</div>
-    <script src="js/forms.js"></script>
+                    <div class="input-field">
+                        <input type="text" name="username" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <a href="#" class="forgot-pass-link">Forgot password?</a>
+                    <button type="submit" name="login">Log In</button>
+                </form>
+                <div class="bottom-link">
+                    Don't have an account?
+                    <a href="#" id="signup-link">Signup</a>
+                </div>
+            </div>
+        </div>
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>To become a part of our community, please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form action="" method="post">
+                <div class="input-field">
+                        <input type="text" name="username" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy">
+                        <label for="policy">I agree the<a href="#" class="option">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit" name="submit">Sign Up</button>
+                </form>
+                <div class="bottom-link">
+                    Already have an account? 
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 <?php
