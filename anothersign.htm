@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another signin</title>
+    <link rel="stylesheet" href="anothersign.css">
+</head>
+<body>
+    <div class="full-page">
+        <div id="login-form" class="login-page">
+            <div class="form-box">
+                <div class="button-box">
+                    <div class="btn" id="btn"></div>
+                    <button type="button" onclick="login()" class="toggle-btn">Log In</button>
+                    <button type="button" onclick="register()" class="toggle-btn"> Register</button>
+                </div>
+                <form action="" id="login" class="input-group-login">
+                    <div class="txt">
+                        <h3>Remind us who you are!</h3>
+                    </div>
+                    
+                    <div class="cntrl email">
+                        <input type="text" name="" id="l_email" class="input-field" placeholder="Email Id" >
+                        <small>Error</small>
+                    </div>
+                    <div class="cntrl pswd">
+                        <input type="password" name="" id="l_pswd" class="input-field" placeholder="Password" >
+                        <small>Error</small>
+                    </div>
+                    <div class="check-box-contet">
+                        <input type="checkbox" name="" id="l_check" class="check-box">
+                        <span class = "chcktxt">Remember password</span>
+                    </div>
+                    
+                    <button onclick="validateInput()" type="submit" class="submit-btn">Log in</button>
+                </form>
+                <form action="" class="input-group-register" id="register">
+                    <div class="txt">
+                        <h3>Help us know you</h3>
+                    </div>
+                    <div class="cntrl fname">
+                        <input type="text" name="" id="fname" class="input-field" placeholder="Firstname" required>
+                        <small>Error</small>
+                    </div>
+                    <div class="cntrl lname">
+                        <input type="text" name="" id="lname" class="input-field" placeholder="Lastname" required>
+                        <small>Error</small>
+                    </div>
+                    <div class="cntrl email">
+                        <input type="email" name="" id="s_email" class="input-field" placeholder="Email Id" required>
+                        <small>Error</small>
+                    </div>
+                    <div class="cntrl password">
+                        <input type="password" name="" id="s_pswd" class="input-field" placeholder="Password" required>
+                        <small>Error</small>
+                    </div>
+                    <div class="cntrl conf-password">
+                        <input type="password" name="" id="conpswd" class="input-field" placeholder="Confirm Password" required>
+                        <small>Error</small>
+                    </div>
+                    <div class="check-box-content">
+                        <input type="checkbox" name="" id="s_check" class="check-box" required>
+                        <span class = "chcktxt">I agree to the terms and conditions</span>
+                    </div>
+                    <button onclick="validateInput()" type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    <script src="anothersign.js"></script>
+</body>
+</html>

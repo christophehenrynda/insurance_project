@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    color: aliceblue;
+}
+.full-page {
+    background-color: rgb(223, 234, 224);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('8028809.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/*#login-form{
+    display: none;
+}*/
+.form-box {
+    opacity: 0.8;
+    width: 380px;
+    height: 560px;
+    position: relative;
+    margin: 2% auto;
+    background: linear-gradient(to bottom, #2ecc71, #10da64);
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+.button-box {
+    
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #f9faf859;
+    border-radius: 30px;
+}
+.button-box button {
+    color: whitesmoke;
+}
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #777;
+    border-radius: 30px;
+    transition: .5s;
+}
+.input-group-login {
+    z-index: 100;
+    top: 150px;
+    position: absolute;
+    width: 280px;
+    transition: 1s;
+}
+.input-group-register {
+    top: 120px;
+    position: absolute;
+    width: 280px;
+    transform: 1s;
+}
+.txt h3 {
+    text-decoration: none;
+    padding: 3px;
+    color: #8E44AD;
+}
+::placeholder{
+    color: #fff;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #bdc3c7;
+    outline: none;
+    background: transparent;
+    
+}
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #fff;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.check-box {
+    margin: 30px 10px 34px 0;
+}
+.chcktxt {
+    color: #fff;
+    font-size:  12px;
+    bottom: 68px;
+    position: absolute;
+}
+#login {
+    left: 50px;
+}
+#login input {
+    color: white;
+    font-size: 15px;
+}
+#register {
+    left: 450px;
+}
+#register input{
+    color: white;
+    font-size: 15px;
+}
+small {
+    position: absolute;
+    margin: 3px;
+    display: none;
+}
+.cntrl.success input{
+    border-bottom: 2px solid #1aa71a;
+}
+.cntrl.error input{
+    border-bottom: 2px solid #ff0800;
+}
